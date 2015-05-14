@@ -1,0 +1,214 @@
+{%extends "manage.html"%}
+{%block pagehead%}
+	<h2>菜单管理</h2>
+	<p id="page-intro"></p>
+{%endblock%}
+{%block table_tittle%}			
+	<div class="content-box-header">	
+		<h3>菜单信息</h3>	
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">菜单列表</a></li> <!-- href must be unique and match the id of target div -->
+			<!-- <li><a href="#tab2">订单详情</a></li> -->
+		</ul>
+		<div class="clear"></div>
+	</div> <!-- End .content-box-header -->
+{%endblock%}
+{%block tr_tittle%}					
+   <th>编号</th>
+   <th>菜品名称</th>
+   <th>价格</th>
+   <th>菜品宣传</th>
+   <th>图片名称</th>
+   <th>图片地址</th>
+   <th>售出份数</th>	   
+{%endblock%}
+{%block add_block%}
+<form name="addform" method="POST" onsubmit="return add_form_check()" action="/menumanage/">		
+	<h3>新增信息</h3>
+ 
+	<div id="left" style="float:left;display:inline;font-size:14px;">
+        <h6  class="newmenu_label">菜品名称：</h6><br/>
+        <h6  class="newmenu_label">价格：</h6><br/>
+        <h6  class="newmenu_label">菜品宣传：</h6><br/>
+        <h6  class="newmenu_label">图片名称：</h6><br/>
+        <h6  class="newmenu_label">图片地址：</h6><br/>
+        <h6  class="newmenu_label" style="color: red;"></h6><br/>
+    </div>
+    <div id="center" style="float:right;display:inline;width:80%;">		
+		<input id="add_name" name="name" type="text"  style="margin-top: 1px;" placeholder = "请输入新增菜品名称"/>
+		<input id="add_price" name="price" type="text" class="newmenu_message" placeholder = "请输入新增价格"/>
+		<input id="add_describe" name="describe" type="text" class="newmenu_message" placeholder = "请输入新增菜品宣传"/>
+		<input id="add_img_url" name="img_url" type="text" class="newmenu_message" placeholder = "请输入新增图片名称"/>
+		<input id="add_url" name="url" type="text" class="newmenu_message" placeholder = "请输入新增图片地址"/>	
+        <span id="add_tips" style="color: red; display: block; margin-top: 21px;"></span>	
+	</div>
+	<div id="right"> 						
+		<input id="save" class="button" type="submit" style="float:center" value="保存" />
+	</div>
+</form>
+{%endblock%}
+{% block add_form_check_block %}
+	<script>
+        function add_form_check(){
+	        var name=document.all("add_name", 1).value.trim();
+	        var price=document.all("add_price", 1).value.trim();
+	        var describe=document.all("add_describe", 1).value.trim();
+	        var img_url=document.all("add_img_url", 1).value.trim();
+	        var url=document.all("add_url", 1).value.trim();
+            if(name == ""){
+                document.all("add_tips", 1).innerHTML = "菜品名称不能为空！";
+                document.all("add_name", 1).focus();
+                return false;
+            } else if(price == ""){
+                document.all("add_tips", 1).innerHTML = "价格不能为空！";
+                document.all("add_price", 1).focus();
+                return false;
+            } else if(describe == ""){
+                document.all("add_tips", 1).innerHTML = "菜品宣传不能为空！";
+                document.all("add_describe", 1).focus();
+                return false;
+            } else if(img_url == ""){
+                document.all("add_tips", 1).innerHTML = "图片名称不能为空！";
+                document.all("add_img_url", 1).focus();
+                return false;
+            } else if(url == ""){
+                document.all("add_tips", 1).innerHTML = "图片地址不能为空！";
+                document.all("add_url", 1).focus();
+                return false;
+            }
+		}
+	</script>
+{% endblock %}
+{%block update_block%}
+<form name="updateform" method="POST" onsubmit="return update_form_check()" action="/menumanage/">		
+	<h3>修改信息</h3>
+ 
+	<div id="left" style="float:left;display:inline;font-size:14px;">
+        <h6  class="newmenu_label">菜品编号：</h6><br/>
+        <h6  class="newmenu_label">菜品名称：</h6><br/>
+        <h6  class="newmenu_label">价格：</h6><br/>
+        <h6  class="newmenu_label">菜品宣传：</h6><br/>
+        <h6  class="newmenu_label">图片名称：</h6><br/>
+        <h6  class="newmenu_label">图片地址：</h6><br/>
+        <h6  class="newmenu_label">售出份数：</h6><br/>
+        <h6  class="newmenu_label" style="color: red;"></h6><br/>
+    </div>
+    <div id="center" style="float:right;display:inline;width:80%;">	
+		<input id="update_id" name="id" type="text" class="newmenu_message" style="margin-top: 1px;" readonly="readonly"/>	
+		<input id="update_name" name="name" type="text" class="newmenu_message" style="color: blue;"/>
+		<input id="update_price" name="price" type="text" class="newmenu_message" style="color: blue;"/>
+		<input id="update_describe" name="describe" type="text" class="newmenu_message" style="color: blue;"/>
+		<input id="update_img_url" name="img_url" type="text" class="newmenu_message" style="color: blue;"/>
+		<input id="update_url" name="url" type="text" class="newmenu_message" style="color: blue;"/>
+		<input id="update_quantity_sold" name="quantity_sold" type="text" class="newmenu_message" style="color: blue;"/>
+        <span id="update_tips" style="color: red; display: block; margin-top: 21px;"></span>		
+	</div>
+	<div id="right"> 							
+		<input id="save" class="button" type="submit" style="float:center" value="保存" />
+	</div>
+</form>
+{%endblock%}
+{% block update_form_check_block %}
+	<script>
+        function update_form_check(){
+	        var name=document.all("update_name", 1).value.trim();
+	        var price=document.all("update_price", 1).value.trim();
+	        var describe=document.all("update_describe", 1).value.trim();
+	        var img_url=document.all("update_img_url", 1).value.trim();
+	        var url=document.all("update_url", 1).value.trim();
+	        var quantity_sold=document.all("update_quantity_sold", 1).value.trim();
+            if(name == ""){
+                document.all("update_tips", 1).innerHTML = "菜品名称不能为空！";
+                document.all("update_name", 1).focus();
+                return false;
+            } else if(price == ""){
+                document.all("update_tips", 1).innerHTML = "价格不能为空！";
+                document.all("update_price", 1).focus();
+                return false;
+            } else if(describe == ""){
+                document.all("update_tips", 1).innerHTML = "菜品宣传不能为空！";
+                document.all("update_describe", 1).focus();
+                return false;
+            } else if(img_url == ""){
+                document.all("update_tips", 1).innerHTML = "图片名称不能为空！";
+                document.all("update_img_url", 1).focus();
+                return false;
+            } else if(url == ""){
+                document.all("update_tips", 1).innerHTML = "图片地址不能为空！";
+                document.all("update_url", 1).focus();
+                return false;
+            } else if(quantity_sold == ""){
+                document.all("update_tips", 1).innerHTML = "售出份数不能为空！";
+                document.all("update_quantity_sold", 1).focus();
+                return false;
+            }
+		}
+	</script>
+{% endblock %}
+{% block before_update_modal_block %}
+	<script>
+        function before_update_modal(){
+            var checked_id = get_checked_id();
+            if(checked_id == -1)
+                document.getElementById("a_update").href = "#more_checked";
+            else if(checked_id == -2)
+                document.getElementById("a_update").href = "#no_checked";
+            else{
+                document.getElementById("a_update").href = "#update_data";
+                {% for element in data_list %}
+                if({{element.id}} == checked_id){
+                    document.getElementById("update_id").value = "{{element.id}}";
+                    document.getElementById("update_name").value = "{{element.name}}";
+                    document.getElementById("update_price").value = "{{element.price}}";
+                    document.getElementById("update_describe").value = "{{element.describe}}";
+                    document.getElementById("update_img_url").value = "{{element.img_url}}";
+                    document.getElementById("update_url").value = "{{element.url}}";
+                    document.getElementById("update_quantity_sold").value = "{{element.quantity_sold}}";
+                }
+                {% endfor %}
+    		}
+		}
+	</script>
+{% endblock %}
+{%block tr_content%}
+	<td><input type="checkbox" name="{{element.id}}" id="{{element.id}}" /></td>						
+	<td>{{element.id}}</td>
+	<td>{{element.name}}</td>
+	<td>￥{{element.price}}</td>
+	<td>{{element.describe}}</td>
+	<td>{{element.img_url}}</td>
+	<td>{{element.url}}</td>
+	<td>{{element.quantity_sold}}</td>
+{%endblock%}
+{%block script%}
+	<script>
+	    $(document).ready(function(){
+		    $('#delete_data').click(function(){
+		    	var el = document.getElementsByTagName('input'); 
+				var len = el.length; 
+				for(var i=0; i<len; i++) { 
+					if((el[i].type=="checkbox") && el[i].checked == true) {
+						$.ajax({  
+				            type:'POST',              
+				            contentType: "application/x-www-form-urlencoded;charset=utf-8",  
+				            url:"/menumanage/",  
+				            data:{
+				            	"delete":el[i].name,
+				            },  
+				            //成功后  
+				            success:function(){    
+				            },  
+
+				            complete:function(){  
+                                window.location.href = "/menumanage/"
+                                //location.reload(true);//刷新  会重复提交POST数据  
+				            }   
+				        });
+					} 
+				}
+
+		    }); 
+		    $('#deletemenu').unblind('click')
+	    });
+	</script>						
+{%endblock%}

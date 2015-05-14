@@ -1,0 +1,212 @@
+{% extends "front_page/base.html" %}
+{% load i18n %}
+
+{% block title %}
+<title>{% trans 'Corp_b' %} | {% trans '填写配送|安装订单' %}</title>
+{% endblock %}
+
+{% block main_content %}
+<!-- Start: MAIN CONTENT -->
+<div class="content">
+  <div class="container">
+    <div class="page-header">
+      <h1>{% trans '填写配送|安装订单' %}</h1>
+    </div>
+    <!-- Start: CHECKOUT -->
+    <div class="checkout">
+      <!-- Start: SERVICE OPTION -->
+      <div id="header-service" class="page-header">
+        <span class="is-stepped stepnumber1"></span>
+        <h3>{% trans '服务选项' %}</h3>
+      </div>
+      <div id="step-service" class="step">
+        <button id="btn-service-edit" class="summary-edit-link button rect secondary hide">
+          <span>{% trans '编辑' %}</span>
+        </button>          
+        <form id="form-service-option" class="step-content" method="post">
+          <div id="div-service-edit" class="grid-1of2">
+	    <div class="field-set">
+              <span class="field-header">{% trans '服务方式' %}</span>
+	      <div class="field-content">
+                <span>{% trans '关于服务方式-仅配送/配送并安装的说明描述.关于服务方式-仅配送/配送并安装的说明描述关于服务方式-仅配送/配送并安装的说明描述' %}</span>
+                <select id="select-type">
+                  <option value="0">{% trans '仅配送' %}</option>
+                  <option value="1">{% trans '配送并安装' %}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="div-service-value" class="grid-1of2 hide">
+	    <div class="field-set">
+              <span class="field-header">{% trans '服务方式' %}</span>
+              <div class="field-value">
+                <p><span id="span-service"></span></p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div id="div-service-continue" class="step-continue">
+          <div class="continue-content clearfix">
+            <div class="gs grid-3of4">
+            </div>
+            <div class="gs grid-1of4 r-align">
+              <button type="submit" id="btn-service-continue" class="button rect transactional">
+                <span>{% trans '继续' %}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: SERVICE OPTION -->
+      <!-- Start: GOODS INFO -->
+      <div id="header-goods" class="page-header greyed-out">
+        <span class="is-stepped stepnumber2"></span>
+        <h3>{% trans '货物信息' %}</h3>
+      </div>
+      <div id="step-goods" class="step hide">
+        <button id="btn-goods-edit" class="summary-edit-link button rect secondary hide">
+          <span>{% trans '编辑' %}</span>
+        </button>          
+        <form id="form-goods-info" class="step-content" method="post">
+          <div id="div-goods-edit" class="grid-1of2">
+	    <div class="field-set">
+              <span class="field-header">{% trans '货物信息' %}</span>
+	      <div class="field-content">
+                <span>{% trans '关于货物信息的说明描述.关于货物信息的说明描述.关于货物信息的说明描述.关于货物信息的说明描述.' %}</span>
+                <div class="control-group">
+                  <input type="text" id="goods-name" name="goods-name" placeholder="{% trans '货物名称' %}">
+                </div>
+                <div class="control-group">
+                  <input type="text" id="goods-quantity" name="goods-quantity" placeholder="{% trans '货物数量' %}">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div-goods-value" class="grid-1of2 hide">
+	    <div class="field-set">
+              <span class="field-header">{% trans '货物信息' %}</span>
+              <div class="field-value">
+                <p><span id="span-goods-name"></span></p>
+                <p><span id="span-goods-quantity"></span></p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div id="div-goods-continue" class="step-continue">
+          <div class="continue-content clearfix">
+            <div class="gs grid-3of4">
+            </div>
+            <div class="gs grid-1of4 r-align">
+              <button type="submit" id="btn-goods-continue" class="button rect transactional">
+                <span>{% trans '继续' %}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: GOODS INFO -->
+      <!-- Start: CLIENT INFO -->
+      <div id="header-client" class="page-header greyed-out">
+        <span class="is-stepped stepnumber3"></span>
+        <h3>{% trans '客户资料' %}</h3>
+      </div>
+      <div id="step-client" class="step hide">
+        <button id="btn-client-edit" class="summary-edit-link button rect secondary hide">
+          <span>{% trans '编辑' %}</span>
+        </button>          
+        <form id="form-client-info" class="step-content" method="post">
+          <div id="div-client-edit" class="grid-1of2">
+	    <div class="field-set">
+              <span class="field-header">{% trans '客户资料' %}</span>
+	      <div class="field-content">
+                <span>{% trans '关于客户资料的说明描述.关于客户资料的说明描述.关于客户资料的说明描述.关于客户资料的说明描述.' %}</span>
+                <div class="control-group">
+                  <input type="text" id="client-name" name="client-name" placeholder="{% trans '客户姓名' %}">
+                </div>
+                <div class="control-group">
+                  <input type="text" id="client-address" name="client-address" placeholder="{% trans '联系地址' %}">
+                </div>
+                <div class="control-group">
+                  <input type="text" id="client-phone" name="client-phone" placeholder="{% trans '联系电话' %}">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div-client-value" class="grid-1of2 hide">
+	    <div class="field-set">
+              <span class="field-header">{% trans '客户资料' %}</span>
+              <div class="field-value">
+                <p><span id="span-client-name"></span></p>
+                <p><span id="span-client-address"></span></p>
+                <p><span id="span-client-phone"></span></p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div id="div-client-continue" class="step-continue">
+          <div class="continue-content clearfix">
+            <div class="gs grid-3of4">
+            </div>
+            <div class="gs grid-1of4 r-align">
+              <button type="submit" id="btn-client-continue" class="button rect transactional">
+                <span>{% trans '继续' %}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: CLIENT INFO -->
+      <!-- Start: CLIENT INFO -->
+      <div id="header-check" class="page-header greyed-out">
+        <span class="is-stepped stepnumber4"></span>
+        <h3>{% trans '核对' %}</h3>
+      </div>
+      <div id="step-check" class="step hide">      
+        <form id="form-client-info" class="step-content" method="post">
+          <div class="grid-1of2">
+	    <div class="field-set">
+              <span class="field-header">{% trans '核对填写信息' %}</span>
+	      <div class="field-content">
+                <span>{% trans '请核对以上所填写的订单信息，确认无误后提交订单。' %}</span>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="step-continue">
+          <div class="continue-content clearfix">
+            <div class="gs grid-3of4">
+            </div>
+            <div class="gs grid-1of4 r-align">
+              <button type="submit" id="submit" class="button rect transactional">
+                <span>{% trans '提交订单' %}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: CLIENT INFO -->
+    </div>
+    <!-- End: SERVICE CHECKOUT -->
+  </div>
+</div>
+
+
+
+<!-- End: MAIN CONTENT -->
+{% endblock %}
+
+{% block css_import %}
+<link href="{{ STATIC_URL }}css/front_page/checkout.css" rel="stylesheet">
+{% endblock %}
+
+{% block js_import %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/front_page/deli_insta/checkout.js"></script>
+{% endblock %}
+
+{% block js_code %}
+<script type="text/javascript">
+  $(function(){
+    Checkout.init();
+  });
+</script>
+{% endblock %}

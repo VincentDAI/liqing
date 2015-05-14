@@ -1,0 +1,283 @@
+
+
+
+h1{
+	color:white;
+    text-align:left;
+    font-size: 46px;
+    font-family:STFangsong;
+    font-weight:bolder;
+    display:inline;
+}
+
+h5{
+	color:white;
+    text-align:center;
+    font-size:46px;
+    font-family:STFangsong;
+    font-weight:bold;
+    display:inline;
+    
+}
+
+
+h3{
+    color:#ff8c14;
+    font-family:STFangsong;
+    padding-top:30px;
+    font-size:200%;
+    font-weight:bold;
+    display:inline;
+    position:relative;
+}
+
+
+h4{
+    color:#9f9f9f;
+    font-family:STFangsong;
+    text-align:left;
+    margin-left:26px;
+    margin-top:0px;
+    font-size:25px;
+    font-weight:normal;
+    position:relative;
+}
+
+
+h2{
+    color:#6e6e6e;
+    font-family:STFangsong;
+    padding-top:30px;
+    font-size:150%;
+    font-weight:normal;
+    display:inline;
+    position:relative;
+}
+
+
+body {
+    width:100%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    background:#fff3dc;
+    
+}
+
+span{
+	font-color:#be1b1b;
+}
+
+.img{
+    width:92%;
+    height:98%;
+    padding-left:10px;
+    max-width: 100%;
+}
+
+
+.left{
+	width:20%;
+    height:90%;
+    margin-top:1%;
+    margin-left:0px;
+    margin-bottom:1%;
+    float:left;
+    position:relative;
+    
+    
+}
+
+.right{
+	width:30%;
+    height:90%;
+    margin-top:1%;
+    margin-left:1%;
+    margin-bottom:1%;
+    float:left;
+    position:relative;
+    text-align:left;
+   
+    
+}
+
+.input{
+	width:20%;
+    height:50%;
+    margin-top:5%;
+    margin-right:-2%;
+    margin-bottom:2.5%;
+    float:right;
+    position:relative;
+    text-align:left;
+   
+    
+}
+
+.demo{
+    width:100%;
+    height:180px;
+    background:white;
+    border:#909090 1px solid;
+    margin-top:0px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    clear:both;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/ 
+	-moz-box-shadow: 7px 6px 8px #b2b2b2;/*firefox*/ 
+	-webkit-box-shadow:7px 6px 8px #b2b2b2;/*safari或chrome*/ 
+	box-shadow:7px 6px 0px #b2b2b2;/*opera或ie9*/ 
+}
+
+.reduce{
+	width:15%;
+    height:45%;
+    font-size:150%;
+    text-align:center;
+    margin-right:-2%;
+}
+
+.rise{
+	width:15%;
+    height:45%;
+    font-size:150%;
+    text-align:center;
+    margin-left:-2%;
+}
+
+.number{
+	width:30%;
+    height:34%;
+    font-size:150%;
+    text-align:center;
+}
+
+
+#demo{
+    width:100%;
+    height:180px;
+    background:white;
+    border:#909090 1px solid;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    clear:both;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/ 
+	-moz-box-shadow: 7px 6px 8px #b2b2b2;/*firefox*/ 
+	-webkit-box-shadow:7px 6px 8px #b2b2b2;/*safari或chrome*/ 
+	box-shadow:7px 6px 0px #b2b2b2;/*opera或ie9*/ 
+}
+
+
+#bottom{
+    width:100%;
+    height:120px;
+    background:white;
+    border:#909090 1px solid;
+    position:fixed;
+    bottom:20px;
+    z-index:1
+    
+}
+
+#smalllobster{
+    width:60%;
+    height:96%;
+    margin-top:1%;
+    display:inline;
+    padding-bottom:0.5%;
+    margin-right:0px;
+    margin-bottom:0.5%;
+    float:center;
+    max-width: 100%;
+}
+
+
+#layout{
+	margin:auto;
+    clear:both;
+}
+
+.list{
+	background-color:#ede8e9;
+    height: 200px;
+}
+
+.spance1{margin-left:460px;}
+
+.spance2{margin-left:430px;}
+
+.spance3{margin-left:100px;}
+
+
+#wholesize{
+	width: auto;
+	height: auto;
+	font-family: Microsoft YaHei;
+}
+
+#title{
+	background-color: #be1b1b;
+    width:100%;
+    height:100px;
+}
+
+#tittletext{
+	width:50%;
+    height:60%;
+    display:inline;
+    z-index:1;
+    float:right;
+    margin-top:1%;
+    margin-right:25%;
+    
+}
+
+#brand{
+    width:20%;
+    height:100%;
+    display:inline; 
+    float:left; 
+    margin-left:1%;
+    
+}
+
+#left{
+	width:40%;
+    height:100px;
+    float:left;
+    position:relative;
+    margin-left:20px;
+    text-align:left;
+    z-index:1;
+    margin-top:2.5%;
+    
+    font-size:200%;
+}
+
+
+#input{
+	width:30%;
+    height:90%;
+    float:right;
+    position:relative;
+    z-index:1;
+    margin-top:2.5%;
+    
+}
+
+#total{
+	width:80%;
+    height:70%;
+    font-size:200%;
+    text-align:center;
+    margin-top:0px;
+    background:#ff8c14;
+    margin-right:20px;
+    
+}
+
+
+

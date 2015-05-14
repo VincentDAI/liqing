@@ -1,0 +1,16 @@
+.modal-form-label {
+    width: 25%;
+    display: inline-block;
+    text-align: right;
+    margin: 10px 0;
+}
+
+.modal-form-control {
+    width: 73%;
+    margin: 10px 0;
+}
+
+.modal-form-footer {
+    text-align: right;
+    margin: 20px 0;
+}

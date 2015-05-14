@@ -1,0 +1,98 @@
+{% extends "front_page/base.html" %}
+{% load i18n %}
+
+{% block title %}
+<title>{% trans 'Corp_b' %} | {% trans 'Login' %}</title>
+{% endblock %}
+
+{% block main_content %}
+<!-- Start: MAIN CONTENT -->
+<div class="content">
+  <div class="container">
+    <div class="page-header">
+      <h1>{% trans 'Login Account' %}</h1>
+    </div>
+    <div class="row">
+      <div class="span6 offset3">
+        <h4 class="widget-header"><i class="icon-lock"></i> {% trans 'Login to Corp_b' %}</h4>
+        <div class="widget-body">
+          <div class="center-align">
+            <form id="form-login" class="form-horizontal form-signin-signup" method="post" action="/login/">
+	      <div id="div-errno-11" class="control-group error hide">
+                <label>{% trans '用户名与密码不匹配' %}</label>
+              </div>
+	      <div class="control-group">
+                <input type="text" id="username" name="username" placeholder="{% trans 'Username' %}">
+              </div>
+	      <div class="control-group">
+                <input type="password" id="password" name="password" placeholder="{% trans 'Password' %}">
+              </div>
+              <div class="remember-me">
+                <div class="pull-left">
+                  <label class="checkbox">
+                    <input type="checkbox"> {% trans 'Remember me' %}
+                  </label>
+                </div>
+                <div class="pull-right">
+                  <a href="#">{% trans 'Forgot password?' %}</a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <input type="submit" value="{% trans 'Login' %}" class="btn btn-primary btn-large">
+            </form>
+            <h4><i class="icon-question-sign"></i> {% trans "Don't have an account?" %}</h4>
+            <a href="/register/" class="btn btn-large bottom-space">{% trans 'Register' %}</a>
+            <h4><i class="icon-thumbs-up"></i> {% trans 'Login with third party account' %}</h4>
+            <ul class="signin-with-list">
+              <li>
+                <a class="btn-twitter">
+                  <i class="icon-twitter icon-large"></i>
+                  {% trans 'Login with Twitter' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-facebook">
+                  <i class="icon-facebook icon-large"></i>
+                  {% trans 'Login with Facebook' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-google">
+                  <i class="icon-google-plus icon-large"></i>
+                  {% trans 'Login with Google' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-github">
+                  <i class="icon-github icon-large"></i>
+                  {% trans 'Login with Github' %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: MAIN CONTENT -->
+{% endblock %}
+
+{% block js_import %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/front_page/login.js"></script>
+{% endblock %}
+
+{% block js_code %}
+<script type="text/javascript">
+  $(function(){
+    $("#nav-login").addClass("active-link");
+
+    $("#username").val("{{ username }}");
+    if("{{ errno }}" == "11") {
+      $("#div-errno-11").removeClass("hide");
+    }
+
+    Login.init();
+  });
+</script>
+{% endblock %}

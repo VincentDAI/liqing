@@ -1,0 +1,23 @@
+.body-navbar {
+    padding-top: 70px;
+}
+
+.navbar .nav > li > .hide {
+    display: none;
+}
+
+.navbar .nav > li > .nav-user {
+    color: #37afe4;
+    font-size: 14px;
+    text-align: center;
+    width: 119px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis; /* not effected ? */
+    white-space: nowrap; /* not effected ? */
+    overflow: hidden;
+}
+
+.div-right-bottom {
+    margin-top: -40px;
+    margin-left: -400px;
+}

@@ -1,0 +1,146 @@
+
+<div class="notification attention png_bg">
+  <a href="#" class="close"><img src="{{ STATIC_URL }}simpla/images/icons/cross_grey_small.png" title="Close this notification" alt="close" /></a>
+  <div>
+    在此页面的操作将改变数据库的存储信息,请谨慎操作!!!
+  </div>
+</div>
+
+<table>
+
+  <thead>
+    <tr>
+      <th><input class="check-all" type="checkbox" id="checkall"/></th>
+      <th>编号</th>
+      <th>用户名</th>
+      <th>真实姓名</th>
+      <th>公司名称</th>
+      <th>联系电话</th>
+      <th>账户审核状态</th>
+      <th>不合法原因描述</th>
+    </tr>								
+  </thead>
+
+  <tbody valign="middle">
+    {% for info in data_list %}
+    <tr>
+      <td><input type="checkbox" name="{{info.id}}" /></td>
+      <td>{{info.id}}</td>
+      <td>{{info.user.username}}</td>
+      <td>{{info.real_name}}</td>
+      <td>{{info.company_name}}</td>
+      <td>{{info.phone_number}}</td>
+      <td>{{info.veri_state}}</td>
+      <td>{{info.invalid_desc}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>							
+
+  <tfoot>
+    <tr>
+      <td colspan="6">
+	<div class="bulk-actions align-left">
+	  <a id="btn-add" class="button" href="#additem" rel="modal">增加</a>
+	  <a id="btn-update" class="button" onclick="before_update_modal()" rel="modal">修改</a>
+	  <a id="btn-delete" class="button" href="#">删除</a>
+
+          <div id="additem" style="display: none"> <!-- Messages are shown when a link with these attributes are clicked: href="#messages" rel="modal"  -->
+            <p>订单不能手动添加，请从微信订餐！</p>
+          </div>
+
+          <div id="no-checked" style="display: none">
+            <p>请选择一项数据！</p>
+          </div>
+          <div id="more-checked" style="display: none">
+            <p>只能选择一项数据！</p>
+          </div>
+          <div id="update-data" style="display: none">
+            <form name="update-form" method="POST" onsubmit="return update_form_check()" action="/manage/">
+              <h3>修改用户信息</h3>
+              <div>
+                <h6 class="modal-form-label">编号：</h6>
+                <input id="update-id" type="text" class="modal-form-control" readonly="readonly"/>
+                <br/>
+                <h6 class="modal-form-label">用户名：</h6>
+                <input id="update-user" type="text" class="modal-form-control" readonly="readonly"/>
+                <br/>
+                <h6 class="modal-form-label">真实姓名：</h6>
+                <input id="update-real-name" type="text" class="modal-form-control" readonly="readonly"/>
+                <br/>
+                <h6 class="modal-form-label">公司名称：</h6>
+                <input id="update-company-name" type="text" class="modal-form-control" readonly="readonly"/>
+                <br/>
+                <h6 class="modal-form-label">联系电话：</h6>
+                <input id="update-phone-number" type="text" class="modal-form-control" readonly="readonly"/>
+                <br/>
+                <h6 class="modal-form-label">账户审核状态：</h6>
+                <select id="update-veri-state" class="modal-form-control" style="color: blue;">
+                  <option value="-1">未完善资料</option>
+                  <option value="0">等待审核</option>
+                  <option value="1">审核通过</option>
+                </select>
+                <br/>
+                <h6 class="modal-form-label">不合法原因描述：</h6>
+                <input id="update-invalid-desc" type="text" class="modal-form-control" readonly="readonly"/>
+              </div>
+              <div class="modal-form-footer"> 							
+                <input id="btn-save" class="button" type="submit" value="保存" />
+              </div>
+            </form>
+          </div> <!-- End update-data -->
+
+        </div>
+      </td>
+
+      <td colspan="6">	
+	<div class="pagination">
+          {% ifnotequal curPage 1 %}
+	  <a href="?curPage={{curPage}}&&totalPage={{totalPage}}&&jumpType=firstPage" title="First Page">&laquo; 首页</a>
+          {% endifnotequal %}
+          {% ifnotequal curPage 1 %}
+          <a href="?curPage={{curPage}}&&totalPage={{totalPage}}&&jumpType=pageUp" title="Previous Page">&laquo; 上一页</a>
+          {% endifnotequal %}
+          {% for page in pageRange %}
+          {% if page in displayPageRange %}
+          {% ifequal page curPage %}
+          <a onclick="return false;" class="number current" title={{page}}>{{page}}</a>
+          {% else %}
+	  <a href="?curPage={{page}}&&totalPage={{totalPage}}&&jumpType=jumpPage" class="number" title={{page}}>{{page}}</a>
+          {% endifequal %}
+          {% else %}
+          {% ifequal page 1 %}
+          <a href="?curPage={{page}}&&totalPage={{totalPage}}&&jumpType=jumpPage" class="number" title={{page}}>{{page}}</a>
+          {% if not page in longerPageRange %}..
+          {% endif %}
+          {% else %}
+          {% ifequal page totalPage %}
+          {% if not page in longerPageRange %}..
+          {% endif %}
+          <a href="?curPage={{page}}&&totalPage={{totalPage}}&&jumpType=jumpPage" class="number" title={{page}}>{{page}}</a>
+          {% endifequal %}
+          {% endifequal %}
+          {% endif %}
+          {% endfor %}
+          {% ifnotequal curPage totalPage %}
+	  <a href="?curPage={{curPage}}&&totalPage={{totalPage}}&&jumpType=pageDown" title="Next Page">下一页 &raquo;</a>
+          {% endifnotequal %}
+          {% ifnotequal curPage totalPage %}
+          <a href="?curPage={{curPage}}&&totalPage={{totalPage}}&&jumpType=lastPage" title="Last Page">尾页&raquo;</a>
+          {% endifnotequal %}
+	</div> <!-- End .pagination -->
+	<div class="clear"></div>
+      </td>
+    </tr>
+  </tfoot>
+
+</table>						
+
+<script type="text/javascript" src="{{ STATIC_URL }}js/manage_page/tab_user_info.js"></script>
+<script type="text/javascript">
+  $(function(){
+
+      TabUserInfo.init();
+    
+  });
+</script>
+		

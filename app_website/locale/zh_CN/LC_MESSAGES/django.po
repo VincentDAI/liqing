@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-03 14:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/front_page/base.html:35
+msgid "Corp"
+msgstr "成都李清装饰"
+
+#: templates/front_page/base.html:45 templates/front_page/index.html:5
+msgid "Index"
+msgstr "主页"
+
+#: templates/front_page/base.html:46 templates/front_page/deli_insta.html:5
+#: templates/front_page/deli_insta.html:17 templates/front_page/index.html:112
+msgid "Delivery & Installation"
+msgstr "配送安装"
+
+#: templates/front_page/base.html:47 templates/front_page/index.html:130
+#: templates/front_page/repairs.html:5 templates/front_page/repairs.html:17
+msgid "Repairs"
+msgstr "维修"
+
+#: templates/front_page/base.html:48 templates/front_page/checkout.html:5
+#: templates/front_page/orders.html:5
+msgid "My Orders"
+msgstr "我的订单"
+
+#: templates/front_page/base.html:49 templates/front_page/base.html.py:115
+#: templates/front_page/contact_us.html:5
+#: templates/front_page/contact_us.html:13
+#: templates/front_page/deli_insta.html:88
+#: templates/front_page/repairs.html:88
+msgid "Contact us"
+msgstr "联系我们"
+
+#: templates/front_page/base.html:50 templates/front_page/login.html:44
+#: templates/front_page/register.html:5 templates/front_page/register.html:31
+msgid "Register"
+msgstr "注册"
+
+#: templates/front_page/base.html:51 templates/front_page/login.html:5
+#: templates/front_page/login.html.py:41 templates/front_page/register.html:35
+msgid "Login"
+msgstr "登录"
+
+#: templates/front_page/base.html:59
+msgid "Logout"
+msgstr "注销"
+
+#: templates/front_page/base.html:78
+msgid "Products"
+msgstr "产品"
+
+#: templates/front_page/base.html:81 templates/front_page/base.html.py:82
+#: templates/front_page/base.html:83
+msgid "Product"
+msgstr "产品"
+
+#: templates/front_page/base.html:84
+msgid "All products"
+msgstr "所有产品"
+
+#: templates/front_page/base.html:87
+msgid "Services"
+msgstr "服务"
+
+#: templates/front_page/base.html:90 templates/front_page/base.html.py:91
+#: templates/front_page/base.html:92
+msgid "Service"
+msgstr "服务"
+
+#: templates/front_page/base.html:93
+msgid "All services"
+msgstr "所有服务"
+
+#: templates/front_page/base.html:98
+msgid "About"
+msgstr "关于"
+
+#: templates/front_page/base.html:101
+msgid "Our works"
+msgstr "我们的工作"
+
+#: templates/front_page/base.html:102
+msgid "Partnerships"
+msgstr "合作关系"
+
+#: templates/front_page/base.html:103
+msgid "Leadership"
+msgstr "领导层"
+
+#: templates/front_page/base.html:104
+msgid "News"
+msgstr "新闻"
+
+#: templates/front_page/base.html:105
+msgid "Events"
+msgstr "事件"
+
+#: templates/front_page/base.html:106
+msgid "Blog"
+msgstr "部落格"
+
+#: templates/front_page/base.html:111
+msgid "Support"
+msgstr "支持"
+
+#: templates/front_page/base.html:114 templates/front_page/deli_insta.html:94
+#: templates/front_page/faq.html:5 templates/front_page/repairs.html:94
+msgid "FAQ"
+msgstr "常见问答"
+
+#: templates/front_page/base.html:118
+msgid "Legal"
+msgstr "合法性"
+
+#: templates/front_page/base.html:121
+msgid "License"
+msgstr "证书"
+
+#: templates/front_page/base.html:122
+msgid "Terms of Use"
+msgstr "使用期限"
+
+#: templates/front_page/base.html:123
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+#: templates/front_page/base.html:124
+msgid "Security"
+msgstr "安全性"
+
+#: templates/front_page/base.html:129
+msgid "Get in touch"
+msgstr "获取联系"
+
+#: templates/front_page/base.html:145
+msgid "Get updated by email"
+msgstr "通过邮件获取更新"
+
+#: templates/front_page/base.html:147
+msgid "Email address"
+msgstr "邮箱地址"
+
+#: templates/front_page/base.html:148
+msgid "Subscribe"
+msgstr "订阅"
+
+#: templates/front_page/base.html:156
+msgid "2012-3000 Corp, Inc. All Rights Reserved."
+msgstr "2012-3000 成都李清装饰工程有限公司版权所有"
+
+#: templates/front_page/checkout.html:5
+#: templates/front_page/complete_info.html:5
+#: templates/front_page/contact_us.html:5
+#: templates/front_page/deli_insta.html:5 templates/front_page/faq.html:5
+#: templates/front_page/index.html:5 templates/front_page/login.html:5
+#: templates/front_page/orders.html:5 templates/front_page/register.html:5
+#: templates/front_page/repairs.html:5 templates/front_page/user_info.html:5
+#: templates/front_page/veri_await.html:5
+#: templates/front_page/veri_fail.html:5
+msgid "Corp_b"
+msgstr "李清装饰"
+
+#: templates/front_page/checkout.html:13
+msgid "填写订单"
+msgstr ""
+
+#: templates/front_page/checkout.html:20
+msgid "服务选项"
+msgstr ""
+
+#: templates/front_page/checkout.html:24 templates/front_page/checkout.html:68
+#: templates/front_page/checkout.html:115
+msgid "编辑"
+msgstr ""
+
+#: templates/front_page/checkout.html:29 templates/front_page/checkout.html:41
+msgid "服务方式"
+msgstr ""
+
+#: templates/front_page/checkout.html:31
+msgid ""
+"关于服务方式-仅配送/配送并安装的说明描述.关于服务方式-仅配送/配送并安装的说明"
+"描述关于服务方式-仅配送/配送并安装的说明描述"
+msgstr ""
+
+#: templates/front_page/checkout.html:33
+msgid "仅配送"
+msgstr ""
+
+#: templates/front_page/checkout.html:34
+msgid "配送并安装"
+msgstr ""
+
+#: templates/front_page/checkout.html:54
+#: templates/front_page/checkout.html:101
+#: templates/front_page/checkout.html:152
+msgid "继续"
+msgstr ""
+
+#: templates/front_page/checkout.html:64 templates/front_page/checkout.html:73
+#: templates/front_page/checkout.html:87
+msgid "货物信息"
+msgstr ""
+
+#: templates/front_page/checkout.html:75
+msgid ""
+"关于货物信息的说明描述.关于货物信息的说明描述.关于货物信息的说明描述.关于货物"
+"信息的说明描述."
+msgstr ""
+
+#: templates/front_page/checkout.html:77
+msgid "货物名称"
+msgstr ""
+
+#: templates/front_page/checkout.html:80
+msgid "货物数量"
+msgstr ""
+
+#: templates/front_page/checkout.html:111
+#: templates/front_page/checkout.html:120
+#: templates/front_page/checkout.html:137
+msgid "客户资料"
+msgstr ""
+
+#: templates/front_page/checkout.html:122
+msgid ""
+"关于客户资料的说明描述.关于客户资料的说明描述.关于客户资料的说明描述.关于客户"
+"资料的说明描述."
+msgstr ""
+
+#: templates/front_page/checkout.html:124
+msgid "客户姓名"
+msgstr ""
+
+#: templates/front_page/checkout.html:127
+msgid "联系地址"
+msgstr ""
+
+#: templates/front_page/checkout.html:130
+msgid "联系电话"
+msgstr ""
+
+#: templates/front_page/checkout.html:162
+msgid "核对"
+msgstr ""
+
+#: templates/front_page/checkout.html:168
+msgid "核对填写信息"
+msgstr ""
+
+#: templates/front_page/checkout.html:170
+msgid "请核对以上所填写的订单信息，确认无误后提交订单。"
+msgstr ""
+
+#: templates/front_page/checkout.html:181
+msgid "提交订单"
+msgstr ""
+
+#: templates/front_page/complete_info.html:5
+#: templates/front_page/veri_fail.html:5
+msgid "Complete Info"
+msgstr "完善信息"
+
+#: templates/front_page/complete_info.html:13
+msgid "尚未完善个人信息"
+msgstr ""
+
+#: templates/front_page/complete_info.html:19
+msgid "说明"
+msgstr ""
+
+#: templates/front_page/complete_info.html:22
+msgid ""
+"由于尚未完善个人信息，账号处于未激活状态，用户将无法提交进行交易。请提交必要"
+"的个人信息，网站管理员将审核提交的信息，审核通过后账号即可正常使用。"
+msgstr ""
+
+#: templates/front_page/complete_info.html:29
+msgid "填写个人信息"
+msgstr ""
+
+#: templates/front_page/complete_info.html:33
+#: templates/front_page/user_info.html:31
+#: templates/front_page/veri_fail.html:33
+msgid "Real Name"
+msgstr "真实姓名"
+
+#: templates/front_page/complete_info.html:36
+#: templates/front_page/user_info.html:34
+#: templates/front_page/veri_fail.html:36
+msgid "Company Name"
+msgstr "公司名称"
+
+#: templates/front_page/complete_info.html:39
+#: templates/front_page/user_info.html:39
+#: templates/front_page/veri_fail.html:39
+msgid "Phone Number"
+msgstr "联系电话"
+
+#: templates/front_page/complete_info.html:42
+#: templates/front_page/veri_fail.html:42
+msgid "Submit"
+msgstr "提交"
+
+#: templates/front_page/contact_us.html:19
+msgid "Quick message"
+msgstr "快速消息"
+
+#: templates/front_page/contact_us.html:24
+msgid "Name"
+msgstr "姓名"
+
+#: templates/front_page/contact_us.html:29
+msgid "Email"
+msgstr "邮箱"
+
+#: templates/front_page/contact_us.html:34
+msgid "Message"
+msgstr "消息"
+
+#: templates/front_page/contact_us.html:39
+msgid "Send"
+msgstr "发送"
+
+#: templates/front_page/contact_us.html:48
+msgid "Offices"
+msgstr "办事处"
+
+#: templates/front_page/contact_us.html:50
+msgid "North America"
+msgstr "北美"
+
+#: templates/front_page/contact_us.html:67
+msgid "Europe"
+msgstr "欧洲"
+
+#: templates/front_page/contact_us.html:84
+msgid "Asia"
+msgstr "亚洲"
+
+#: templates/front_page/deli_insta.html:82 templates/front_page/index.html:64
+#: templates/front_page/index.html.py:84 templates/front_page/index.html:120
+#: templates/front_page/index.html:138 templates/front_page/repairs.html:82
+msgid "Buy now"
+msgstr "现在购买"
+
+#: templates/front_page/index.html:20
+msgid "TELL ABOUT YOUR BUSINESS AND CORPORATE."
+msgstr "描述业务与公司介绍"
+
+#: templates/front_page/index.html:26 templates/front_page/index.html.py:45
+#: templates/front_page/index.html:65 templates/front_page/index.html.py:85
+msgid "Learn more"
+msgstr "了解更多"
+
+#: templates/front_page/index.html:39
+msgid "TELL ABOUT YOUR NATURE OF WORK"
+msgstr "描述工作本质"
+
+#: templates/front_page/index.html:58
+msgid "TELL ABOUT YOUR PRODUCT"
+msgstr "描述产品"
+
+#: templates/front_page/index.html:78
+msgid "TELL ABOUT YOUR ANOTHER PRODUCT"
+msgstr "描述其他产品"
+
+#: templates/front_page/index.html:104
+msgid "Our Services"
+msgstr "我们的服务"
+
+#: templates/front_page/index.html:121 templates/front_page/index.html:139
+msgid "Read more"
+msgstr "阅读更多"
+
+#: templates/front_page/login.html:13
+msgid "Login Account"
+msgstr "登录账户"
+
+#: templates/front_page/login.html:17
+msgid "Login to Corp_b"
+msgstr "登录李清装饰账户"
+
+#: templates/front_page/login.html:22
+msgid "用户名与密码不匹配"
+msgstr ""
+
+#: templates/front_page/login.html:25 templates/front_page/register.html:22
+#: templates/front_page/user_info.html:22
+msgid "Username"
+msgstr "用户名"
+
+#: templates/front_page/login.html:28 templates/front_page/register.html:25
+msgid "Password"
+msgstr "密码"
+
+#: templates/front_page/login.html:33
+msgid "Remember me"
+msgstr "记住我"
+
+#: templates/front_page/login.html:37
+msgid "Forgot password?"
+msgstr "忘记密码？"
+
+#: templates/front_page/login.html:43
+msgid "Don't have an account?"
+msgstr "还没有账号？"
+
+#: templates/front_page/login.html:45 templates/front_page/register.html:36
+msgid "Login with third party account"
+msgstr "第三方账号登录"
+
+#: templates/front_page/login.html:50 templates/front_page/register.html:41
+msgid "Login with Twitter"
+msgstr "使用Twitter登录"
+
+#: templates/front_page/login.html:56 templates/front_page/register.html:47
+msgid "Login with Facebook"
+msgstr "使用Facebook登录"
+
+#: templates/front_page/login.html:62 templates/front_page/register.html:53
+msgid "Login with Google"
+msgstr "使用Google登录"
+
+#: templates/front_page/login.html:68 templates/front_page/register.html:59
+msgid "Login with Github"
+msgstr "使用Github登录"
+
+#: templates/front_page/orders.html:13
+msgid "页面正在开发中"
+msgstr ""
+
+#: templates/front_page/orders.html:19
+msgid "......"
+msgstr ""
+
+#: templates/front_page/register.html:13
+msgid "Register Account"
+msgstr "注册账户"
+
+#: templates/front_page/register.html:17
+msgid "Be a part of Corp_b"
+msgstr "成为李清装饰的一员"
+
+#: templates/front_page/register.html:28
+msgid "Password Confirmation"
+msgstr "密码确认"
+
+#: templates/front_page/register.html:34
+msgid "Already have an account?"
+msgstr "已拥有账号"
+
+#: templates/front_page/user_info.html:5
+#: templates/front_page/user_info.html:13
+msgid "User Info"
+msgstr "用户信息"
+
+#: templates/front_page/user_info.html:18
+msgid "Account Info"
+msgstr "账户信息"
+
+#: templates/front_page/user_info.html:27
+msgid "Person Info"
+msgstr "个人信息"
+
+#: templates/front_page/veri_await.html:5
+msgid "Await Verifation"
+msgstr "等待验证"
+
+#: templates/front_page/veri_await.html:13
+msgid "账号正在审核中"
+msgstr ""
+
+#: templates/front_page/veri_await.html:19
+msgid "正在等待网站管理员审核，审核通过后账号即可正常使用。"
+msgstr ""
+
+#: templates/front_page/veri_fail.html:13
+msgid "审核未通过"
+msgstr ""
+
+#: templates/front_page/veri_fail.html:19
+msgid "原因"
+msgstr ""
+
+#: templates/front_page/veri_fail.html:29
+msgid "编辑个人信息"
+msgstr ""

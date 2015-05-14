@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>	
+    
+    <title>李清装饰-后台管理系统</title>
+    
+    <!-- Reset Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/reset.css" type="text/css" media="screen" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/style.css" type="text/css" media="screen" />
+    <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/invalid.css" type="text/css" media="screen" />  
+    <!-- Self Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/self.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/manage_page/base.css" type="text/css" />	        
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/jquery-1.3.2.min.js"></script>	
+    <!-- jQuery Configuration -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/simpla.jquery.configuration.js"></script>	
+    <!-- Facebox jQuery Plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/facebox.js"></script>	
+    <!-- jQuery fix clone() Plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/jquery.fix.clone.js"></script>	
+    <!-- jQuery WYSIWYG Plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/jquery.wysiwyg.js"></script>
+    
+  </head>
+  
+  <body>
+    <div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+      
+      <div id="sidebar">
+        <div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+	  
+          <h1 id="sidebar-title"><a href="#"></a></h1>
+	  <!-- Logo (221px wide) -->
+	  <a href="#"><img id="logo" src="{{ STATIC_URL }}simpla/images/logo.png" alt="Simpla Admin logo" /></a>
+	  <!-- Sidebar Profile links -->
+	  <ul id="main-nav">
+	    <li>
+	      <a href="/gerryhost/">
+		<div class="nav-top-item">
+		  主页
+		</div>
+	      </a>       
+	    </li>
+	    <li>
+	      <a href="/gerryhost/ordermanage/">
+		<div class="nav-top-item">
+		  订单管理
+		</div>
+	      </a>
+	    </li>
+	    <li> 
+	      <a href="/gerryhost/usermanage/">
+		<div class="nav-top-item">
+		  用户管理
+		</div>
+	      </a>
+	    </li>	
+	    <li>
+	      <a href="#">
+		<div>
+		</div>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="#">
+		<div>
+		  
+		</div>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="#">
+		<div>
+		  
+		</div>
+	      </a>
+	    </li>
+	    <li>
+	      <a href="#">
+		<div>
+		  
+		</div>
+	      </a>
+	    </li>
+	    <li>
+	      <input id="current" type="button" value="退出登录"/>
+	    </li>
+	  </ul> <!-- End #main-nav -->
+	  <script type="text/javascript">
+	    $(document).ready(function(){
+	    $("#current").click(function(){
+	    $.ajax({
+	    type:"POST",
+	    url:"/logout/",
+	    data:{
+	    'logout':"quit",
+	    },
+	    success: function(response){
+            document.location.assign('/login/');
+	    }
+	    });
+	    });
+	    });
+	  </script>			
+	</div>
+      </div> <!-- End #sidebar -->		
+
+      <div id="main-content"> <!-- Main Content Section with everything -->			
+	<noscript> <!-- Show a notification if the user has disabled javascript -->
+	  <div class="notification error png_bg">
+	    <div>
+	      Javascript is disabled or is not supported by your browser. Please <a href="http://browsehappy.com/" title="Upgrade to a better browser">upgrade</a> your browser or <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="Enable Javascript in your browser">enable</a> Javascript to navigate the interface properly.
+	      Download From <a href="http://www.exet.tk">exet.tk</a></div>
+	  </div>
+	</noscript>			
+
+	{% block pagehead %}
+	{% endblock %}
+
+	{% block shortcuts %}
+	{% endblock %}
+
+	<div class="content-box">
+	  {% block content-box_tittle %}
+	  {% endblock %}
+
+	  {% block content-box-content %}
+	  {% endblock %}
+	</div> <!-- End .content-box -->			
+	<div class="clear"></div>
+
+	<div id="footer">
+	  <small>
+	    &#169; 李清装饰工程有限公司版权所有 
+	  </small>
+	</div><!-- End #footer -->
+
+      </div> <!-- End #main-content -->
+
+    </div>
+
+    {% block css_part %}
+    {% endblock %}
+
+    {% block js_part %}
+    {% endblock %}
+
+  </body>
+
+</html>

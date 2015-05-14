@@ -1,0 +1,239 @@
+.checkout {
+    margin: 0 20px 0 20px;
+    padding: 10px 20px 10px 20px;
+    background: #fafafa;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0px 2px 7px 0px #666;
+}
+
+.is-stepped {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 7px 6px 4px -9px;
+    background-size: 25px 25px;
+}
+
+.stepnumber1 {
+    background: url('../../images/module-counter-1.png') no-repeat;
+}
+
+.stepnumber2 {
+    background: url('../../images/module-counter-2.png') no-repeat;
+}
+
+.stepnumber3 {
+    background: url('../../images/module-counter-3.png') no-repeat;
+}
+
+.stepnumber4 {
+    background: url('../../images/module-counter-4.png') no-repeat;
+}
+
+.stepnumber5 {
+    background: url('../../images/module-counter-5.png') no-repeat;
+}
+
+.stepnumber6 {
+    background: url('../../images/module-counter-6.png') no-repeat;
+}
+
+.step {
+    position: relative;
+    clear: both;
+    margin: 0 -20px 19px;
+    padding: 0 20px 30px;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+.summary-edit-link {
+    position: absolute;
+    top: -82px;
+    right: 22px;
+    box-shadow: 0 6px 2px -7px #666;
+    background: linear-gradient(#fff,#ebebeb);
+}
+
+.step-content {
+    margin: 6px 12px;
+    padding: 8px;
+}
+
+.step-content input {
+    width: 100%;
+    border: 1px solid #d6d6d6;
+    box-shadow: inset 0 1px 1px #AAA;
+}
+
+.step-content select {
+    width: 100%;
+    border: 1px solid #d6d6d6;
+}
+
+.step-continue {
+    margin: 0 -20px -10px;
+    border-bottom: 1px solid #d5d5d5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f0f0f0));
+}
+
+.continue-content {
+    border-top: 1px solid #d5d5d5;
+    padding: 14px 22px 12px 22px;
+    margin-top: -4px !important;
+    height: 34px;
+}
+
+.gs {
+    float: left;
+    min-height: 1px;
+}
+
+.grid-1of4 {
+    width: 25%;
+}
+
+.grid-1of2 {
+    width: 50%;
+}
+
+.grid-3of4 {
+    width: 75%;
+}
+
+.grid-1of1 {
+    width: 100%;
+}
+
+.r-align {
+    text-align: right;
+}
+
+.button.rect {
+    width: 84px;
+    height: 37px;
+    border-radius: 4px;
+    border: 1px solid #1992d9;
+}
+
+.button.rect.transactional:hover, 
+.button.rect.transactional:focus {
+    background:#027302;
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ba06",endColorstr="#027302");
+    background:-webkit-gradient(linear,left top,left bottom,from(#00ba06),to(#027302));
+    background:-moz-linear-gradient(top,#00ba06,#027302);
+    background-image:-o-linear-gradient(top,#00ba06 0,#027302 100%);
+    background-image:linear-gradient(to bottom,#00ba06 0,#027302 100%);
+    -webkit-box-shadow:inset 0 1px 1px 0 #81d684;
+    -moz-box-shadow:inset 0 1px 1px 0 #81d684;
+    box-shadow:inset 0 1px 1px 0 #81d684;
+}
+
+.button.rect.secondary:hover, 
+.button.rect.secondary:focus {
+    background:-webkit-linear-gradient(#fff,#d7d7d7);
+}
+
+.button.rect>span {
+    color: #fff;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.button.rect.secondary>span {
+    color: #0085cf;
+    font-size: 13px;
+    line-height: 15px;
+    border: 0;
+    background: 0;
+}
+
+.button.rect.secondary {
+    background: linear-gradient(#fff, #ebebeb);
+    border: 1px solid #b5b5b5;
+}
+
+.button.rect.transactional {
+    background: linear-gradient(#00c307, #039103);
+    border: 1px solid #20a623;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.field-set {
+    font-size: 13px;
+}
+
+.field-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.field-content {
+    margin: 0 12px;
+    padding: 15px;
+}
+
+.field-value {
+    display: inline-table;
+    margin-left: 200px;
+}
+
+.greyed-out{
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -ms-filter: alpha(opacity=40);
+}
+
+.header-table {
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f0f0f0));
+}
+
+.header-table td {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+}
+
+.btn.green {
+    color: white;
+    text-shadow: none;
+    background-color: #35aa47;
+    background-image: none;
+}
+
+.btn.red {
+    color: white;
+    text-shadow: none;
+    background-color: #d84a38;
+    background-image: none;
+}
+
+.border-table {
+    border: 1px solid #eee;
+}
+
+.border-table td {
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.control-group.margin-default {
+    margin: 0 0 0 0;
+}
+
+.control-group.margin-default input {
+    margin: 0 0 0 0;
+    width: 90%;
+}
+
+.top-space {
+    margin: 20px 0 0 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn.block {
+    margin: 5px 0 20px 0;
+}

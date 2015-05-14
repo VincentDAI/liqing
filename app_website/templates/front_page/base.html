@@ -1,0 +1,181 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="description" content="Corp | Short description about company">
+    <meta name="author" content="Your name">
+    {% block title %}
+    <title>Corp_b | Give unique title of the page here</title>
+    {% endblock %}
+    <!-- Bootstrap -->
+    <link href="{{ STATIC_URL }}bootbusiness/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap responsive -->
+    <link href="{{ STATIC_URL }}bootbusiness/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- Font awesome - iconic font with IE7 support --> 
+    <link href="{{ STATIC_URL }}bootbusiness/css/font-awesome.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}bootbusiness/css/font-awesome-ie7.css" rel="stylesheet">
+    <!-- Bootbusiness theme -->
+    <link href="{{ STATIC_URL }}bootbusiness/css/boot-business.css" rel="stylesheet">
+
+    <link href="{{ STATIC_URL }}css/front_page/base.css" rel="stylesheet">
+    {% block css_import %}
+    {% endblock %}
+  </head>
+  <body class="body-navbar">
+    {% block header %}
+    <!-- Start: HEADER -->
+    <header>
+      <!-- Start: Navigation wrapper -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a href="/index/" class="brand brand-bootbus">{% trans 'Corp' %}</a>
+            <!-- Below button used for responsive navigation -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Start: Primary navigation -->
+            <div class="nav-collapse collapse">        
+              <ul class="nav pull-right">
+                <li><a id="nav-index" href="/index/">{% trans 'Index' %}</a></li>
+                <li><a id="nav-deli-insta" href="/deli-insta/">{% trans 'Delivery & Installation' %}</a></li>
+                <li><a id="nav-repairs" href="/repairs/">{% trans 'Repairs' %}</a></li>
+                <li><a id="nav-orders" href="/orders/" class="hide">{% trans 'My Orders' %}</a></li>
+                <li><a id="nav-contact-us" href="/contact-us/">{% trans 'Contact us' %}</a></li>
+                <li><a id="nav-register" href="/register/">{% trans 'Register' %}</a></li>
+                <li><a id="nav-login" href="/login/">{% trans 'Login' %}</a></li>
+                <li><a id="nav-user" href="/user-info/" class="nav-user hide">
+                    {% if info %}
+                    {{ user.username }} - {{ info.real_name }}
+                    {% else %}
+                    {{ user.username }}
+                    {% endif %}
+                </a></li>
+                <li><a id="nav-logout" href="/logout/" class="hide">{% trans 'Logout' %}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Navigation wrapper -->   
+    </header>
+    <!-- End: HEADER -->
+    {% endblock %}
+    {% block main_content %}
+
+    {% endblock %}
+    {% block footer %}
+    <!-- Start: FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span2">
+            <h4><i class="icon-star icon-white"></i> {% trans 'Products' %}</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">{% trans 'Product' %}1</a></li>
+                <li><a href="#">{% trans 'Product' %}2</a></li>
+                <li><a href="#">{% trans 'Product' %}3</a></li>
+                <li><a href="#">{% trans 'All products' %}</a></li>
+              </ul>
+            </nav>
+            <h4><i class="icon-cogs icon-white"></i> {% trans 'Services' %}</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">{% trans 'Service' %}1</a></li>
+                <li><a href="#">{% trans 'Service' %}2</a></li>
+                <li><a href="#">{% trans 'Service' %}3</a></li>
+                <li><a href="#">{% trans 'All services' %}</a></li>              
+              </ul>
+            </nav>
+          </div>
+          <div class="span2">
+            <h4><i class="icon-beaker icon-white"></i> {% trans 'About' %}</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">{% trans 'Our works' %}</a></li>
+                <li><a href="#">{% trans 'Partnerships' %}</a></li>
+                <li><a href="#">{% trans 'Leadership' %}</a></li>
+                <li><a href="#">{% trans 'News' %}</a></li>
+                <li><a href="#">{% trans 'Events' %}</a></li>
+                <li><a href="#">{% trans 'Blog' %}</a></li>
+              <ul>
+            </nav>          
+          </div>
+          <div class="span2">
+            <h4><i class="icon-thumbs-up icon-white"></i> {% trans 'Support' %}</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="/faq/">{% trans 'FAQ' %}</a></li>
+                <li><a href="/contact-us/">{% trans 'Contact us' %}</a></li>            
+              </ul>
+            </nav>
+            <h4><i class="icon-legal icon-white"></i> {% trans 'Legal' %}</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">{% trans 'License' %}</a></li>
+                <li><a href="#">{% trans 'Terms of Use' %}</a></li>
+                <li><a href="#">{% trans 'Privacy Policy' %}</a></li>
+                <li><a href="#">{% trans 'Security' %}</a></li>      
+              </ul>
+            </nav>            
+          </div>
+          <div class="span3">
+            <h4>{% trans 'Get in touch' %}</h4>
+            <div class="social-icons-row">
+              <a href="#"><i class="icon-twitter"></i></a>
+              <a href="#"><i class="icon-facebook"></i></a>
+              <a href="#"><i class="icon-linkedin"></i></a>                                         
+            </div>
+            <div class="social-icons-row">
+              <a href="#"><i class="icon-google-plus"></i></a>              
+              <a href="#"><i class="icon-github"></i></a>
+              <a href="mailto:soundar.rathinasamy@gmail.com"><i class="icon-envelope"></i></a>        
+            </div>
+            <div class="social-icons-row">
+              <i class="icon-phone icon-large phone-number"></i> +919750227877
+            </div>
+          </div>      
+          <div class="span3">
+            <h4>{% trans 'Get updated by email' %}</h4>
+            <form>
+              <input type="text" name="email" placeholder="{% trans 'Email address' %}">
+              <input type="submit" class="btn btn-primary" value="{% trans 'Subscribe' %}">
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="container">
+        <p>
+          &copy; {% trans '2012-3000 Corp, Inc. All Rights Reserved.' %}
+        </p>
+      </div>
+    </footer>
+    <!-- End: FOOTER -->
+    {% endblock %}
+    <script type="text/javascript" src="{{ STATIC_URL }}bootbusiness/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}bootbusiness/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}bootbusiness/js/boot-business.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}validate/js/delegate.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}validate/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}validate/js/messages_zh.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/front_page/base.js"></script>
+    {% block js_import %}
+    {% endblock %}
+    <script type="text/javascript">
+      $(function(){
+        $("#nav-user").val("{{ user.username }}");
+
+        BaseFunc.init();
+      });
+    </script>
+    {% block js_code %}
+    {% endblock %}
+  </body>
+</html>

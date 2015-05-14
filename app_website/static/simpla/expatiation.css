@@ -1,0 +1,175 @@
+
+
+
+h1{
+	color:white;
+    text-align:left;
+    font-size: 100%;
+    font-family:STFangsong;
+    font-weight:bolder;
+    display:inline;
+}
+
+h5{
+    color:#be1b1b;
+    font-family:STFangsong;
+    font-size:120%;
+    font-weight:bold;
+    display:inline;
+    position:relative;
+   
+}
+
+
+h3{
+    color:#be1b1b;
+    font-family:STFangsong;
+    font-size:120%;
+    font-weight:bold;
+    display:inline;
+    position:relative;
+   
+}
+
+
+h4{
+    color:#9f9f9f;
+    font-family:STFangsong;
+    text-align:left;
+    margin-left:26px;
+    margin-top:0px;
+    font-size:5%;
+    font-weight:normal;
+    position:relative;
+}
+
+
+a:link,a:visited,a:hover,a:active,input,h2{
+    color:#6e6e6e;
+    font-family:STFangsong;
+    font-size:100%;
+    font-weight:normal;
+    display:inline;
+    position:relative;
+    text-decoration:none;
+}
+
+
+body {
+    width:100%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    background:#fff3dc;
+    
+}
+
+.spance1{margin-left:60%;}
+
+.spance2{margin-left:1%; float:left;}
+
+.spance3{margin-left:5%;}
+
+.spance4{margin-right:8%; float:right;display:inline;width:50%;height:25px;margin-top:-5px;}
+
+
+.demo{
+    width:70%;
+    height:180px;
+    background:white;
+    border:#909090 1px solid;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:5%;
+    position:relative;
+    text-align:left;
+    padding-top:8px;
+    padding-left:4px;
+    float: right;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/ 
+	-moz-box-shadow: 7px 6px 8px #b2b2b2;/*firefox*/ 
+	-webkit-box-shadow:7px 6px 8px #b2b2b2;/*safari或chrome*/ 
+	box-shadow:7px 6px 0px #b2b2b2;/*opera或ie9*/ 
+}
+
+.demo_new{
+    width:80%;
+    height:180px;
+    background:white;
+    border:#909090 1px solid;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    text-align:left;
+    padding-top:8px;
+    padding-left:4px;
+    float:center;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=4);/*ie*/ 
+	-moz-box-shadow: 7px 6px 8px #b2b2b2;/*firefox*/ 
+	-webkit-box-shadow:7px 6px 8px #b2b2b2;/*safari或chrome*/ 
+	box-shadow:7px 6px 0px #b2b2b2;/*opera或ie9*/ 
+}
+
+
+
+#newadd{
+	width:70px;
+    height:30px;
+    color:white;
+    text-align:center;
+    background-color: #be1b1b;
+    float:left;
+    margin-left:8px;
+    margin-top:8px;
+}
+
+#save{
+    font-size:80%;
+    margin-top:10px;
+    background:#fff3dc;
+    width:100%;
+}
+
+#tittle{background:white;height:50px;width:98%;}
+
+.delete{
+    width: 16px;
+    height: 16px;
+    float: right;
+    display: inline;
+    margin-top: 0px;
+    margin-right: 8px;
+    background:url('./images/icons/cross2.png') center no-repeat;
+    color:white;
+    border-radius:2px;
+    
+}
+
+#checkbox{
+    float:left;
+    display: inline;
+    height:170px;
+    width: 10%;
+    margin-left: 5%;
+    margin-top: 30px;
+    clear:left;
+}
+
+#choice{
+    width: 70px;
+    height: 35px;
+    background: #32c832;
+    margin-top: 30px;
+    float: right;
+    margin-right: 40px;
+    color: white;
+    
+}
+
+
+
+
+
+
+

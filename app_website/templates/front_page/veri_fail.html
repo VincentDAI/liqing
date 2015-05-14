@@ -1,0 +1,63 @@
+{% extends "front_page/base.html" %}
+{% load i18n %}
+
+{% block title %}
+<title>{% trans 'Corp_b' %} | {% trans 'Complete Info' %}</title>
+{% endblock %}
+
+{% block main_content %}
+<!-- Start: MAIN CONTENT -->
+<div class="content">
+  <div class="container">
+    <div class="page-header">
+      <h1>{% trans '审核未通过' %}</h1>
+    </div>
+    <div class="row-fluid">
+      <!-- Start: OFFICES -->
+      <div class="span4 offset1">
+        <div class="page-header">
+          <h2>{% trans '原因' %}</h2>
+        </div>
+        <div>
+          {{ info.invalid_desc }}<br>
+        </div>
+      </div>
+      <!-- End: OFFICES -->
+      <!-- Start: CONTACT US FORM -->
+      <div class="span5 offset1">
+        <div class="page-header">
+          <h2>{% trans '编辑个人信息' %}</h2>
+        </div>
+        <form id="form-info" class="form-contact-us" method="post">
+          <div class="control-group">
+            <input type="text" id="real-name" name="real-name" placeholder="{% trans 'Real Name' %}" value="{{ info.real_name }}">
+          </div>
+          <div class="control-group">
+            <input type="text" id="company-name" name="company-name" placeholder="{% trans 'Company Name' %}" value="{{ info.company_name }}">
+          </div>
+          <div class="control-group">
+            <input type="text" id="phone-number" name="phone-number" placeholder="{% trans 'Phone Number' %}" value="{{ info.phone_number }}">
+          </div>
+          <div>
+            <input type="submit" class="btn btn-primary btn-large" value="{% trans 'Submit' %}">
+          </div>
+        </form>
+      </div>
+      <!-- End: CONTACT US FORM -->
+    </div>
+  </div>
+</div>
+<!-- End: MAIN CONTENT -->
+{% endblock %}
+
+{% block js_import %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/front_page/complete-info.js"></script>
+{% endblock %}
+
+{% block js_code %}
+<script type="text/javascript">
+  $(function(){
+    CompleteInfo.init();
+  });
+</script>
+{% endblock %}

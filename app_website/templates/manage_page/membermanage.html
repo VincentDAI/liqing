@@ -1,0 +1,192 @@
+{%extends "manage.html"%}
+{%block pagehead%}
+	<h2>菜单管理</h2>
+	<p id="page-intro"></p>
+{%endblock%}
+{%block table_tittle%}			
+	<div class="content-box-header">	
+		<h3>菜单信息</h3>	
+		<ul class="content-box-tabs">
+			<li><a href="#tab1" class="default-tab">菜单列表</a></li> <!-- href must be unique and match the id of target div -->
+			<!-- <li><a href="#tab2">订单详情</a></li> -->
+		</ul>
+		<div class="clear"></div>
+	</div> <!-- End .content-box-header -->
+{%endblock%}
+{%block tr_tittle%}
+   <th>编号</th>
+   <th>OpenId</th>
+   <th>微信号</th>
+   <th>累计消费</th>
+   <th>实际消费</th>
+   <th>会员等级</th>
+{%endblock%}
+{%block add_block%}
+<form name="addform" method="POST" onsubmit="return add_form_check()" action="/membermanage/">
+	<h3>新增信息</h3>
+ 
+    <div id="left" style="float:left;display:inline;font-size:14px;">
+        <h6  class="newmenu_label">OpenId：</h6><br/>
+        <h6  class="newmenu_label">微信号：</h6><br/>
+        <h6  class="newmenu_label">会员等级：</h6><br/>
+        <h6  class="newmenu_label" style="color: red;"></h6><br/>
+    </div>
+    <div id="center" style="float:right;display:inline;width:80%;">	
+		<input id="add_open_id" name="open_id" type="text" style="margin-top: 1px;" id="newmenu_message_name" placeholder = "请输入新增OpenId"/ >
+		<input id="add_wechat_nickname" name="wechat_nickname" type="text" class="newmenu_message" id="newmenu_message_price" placeholder = "请输入新增微信号"/ >
+        <select id="add_level" name="level" class="newmenu_message" style="color: blue;">
+            {% for level in levels %}
+            	<option value="{{level.id}}">{{level.level_desc}}</option>
+            {% endfor %}
+        </select>
+        <span id="add_tips" style="color: red; display: block; margin-top: 21px;"></span>
+	</div>
+	<div id="right"> 							
+		<input id="save" class="button" type="submit" style="float:center" value="保存" />
+	</div>
+</form>
+{%endblock%}
+{% block add_form_check_block %}
+	<script>
+        function add_form_check(){
+	        var open_id=document.all("add_open_id", 1).value.trim();
+	        var wechat_nickname=document.all("add_wechat_nickname", 1).value.trim();
+            if(open_id == ""){
+                document.all("add_tips", 1).innerHTML = "OpenId不能为空！";
+                document.all("add_open_id", 1).focus();
+                return false;
+            } else if(wechat_nickname == ""){
+                document.all("add_tips", 1).innerHTML = "微信号不能为空！";
+                document.all("add_wechat_nickname", 1).focus();
+                return false;
+            }
+		}
+	</script>
+{% endblock %}
+{%block update_block%}
+<form name="addform" method="POST" onsubmit="return update_form_check()" action="/membermanage/">		
+	<h3>修改信息</h3>
+ 
+	<div id="left" style="float:left;display:inline;font-size:14px;">
+        <h6  class="newmenu_label">会员编号：</h6><br/>
+        <h6  class="newmenu_label">OpenId：</h6><br/>
+        <h6  class="newmenu_label">微信号：</h6><br/>
+        <h6  class="newmenu_label">累计消费：</h6><br/>
+        <h6  class="newmenu_label">实际消费：</h6><br/>
+        <h6  class="newmenu_label">会员等级：</h6><br/>
+        <h6  class="newmenu_label" style="color: red;"></h6><br/>
+    </div>
+    <div id="center" style="float:right;display:inline;width:80%;">	
+		<input id="update_id" name="id" type="text" class="newmenu_message" style="margin-top: 1px;" readonly="readonly"/>	
+		<input id="update_open_id" name="open_id" type="text" class="newmenu_message" readonly="readonly"/>
+		<input id="update_wechat_nickname" name="wechat_nickname" type="text" class="newmenu_message" readonly="readonly"/>
+		<input id="update_aggregate_amount" name="aggregate_amount" type="text" class="newmenu_message" readonly="readonly"/>
+		<input id="update_aggregate_real_amount" name="aggregate_real_amount" type="text" class="newmenu_message" readonly="readonly"/>
+        <select id="update_level" name="level" class="newmenu_message" style="color: blue;">
+            {% for level in levels %}
+            	<option value="{{level.id}}">{{level.level_desc}}</option>
+            {% endfor %}
+        </select>
+        <span id="update_tips" style="color: red; display: block; margin-top: 21px;"></span>
+	</div>
+	<div id="right"> 							
+		<input id="save" class="button" type="submit" style="float:center" value="保存" />
+	</div>
+</form>
+{%endblock%}
+{% block update_form_check_block %}
+	<script>
+        function update_form_check(){
+            /*var open_id=document.all("update_open_id", 1).value.trim();
+	        var wechat_nickname=document.all("update_wechat_nickname", 1).value.trim();
+	        var aggregate_amount=document.all("update_aggregate_amount", 1).value.trim();
+	        var aggregate_real_amount=document.all("update_aggregate_real_amount", 1).value.trim();
+            if(open_id == ""){
+                document.all("update_tips", 1).innerHTML = "OpenId不能为空！";
+                document.all("update_open_id", 1).focus();
+                return false;
+            } else if(wechat_nickname == ""){
+                document.all("update_tips", 1).innerHTML = "微信号不能为空！";
+                document.all("update_wechat_nickname", 1).focus();
+                return false;
+            } else if(aggregate_amount == ""){
+                document.all("update_tips", 1).innerHTML = "累计消费不能为空！";
+                document.all("update_aggregate_amount", 1).focus();
+                return false;
+            } else if(aggregate_real_amount == ""){
+                document.all("update_tips", 1).innerHTML = "实际消费不能为空！";
+                document.all("update_aggregate_real_amount", 1).focus();
+                return false;
+            }*/
+		}
+	</script>
+{% endblock %}
+{% block before_update_modal_block %}
+	<script>
+        function before_update_modal(){
+            var checked_id = get_checked_id();
+            if(checked_id == -1)
+                document.getElementById("a_update").href = "#more_checked";
+            else if(checked_id == -2)
+                document.getElementById("a_update").href = "#no_checked";
+            else{
+                document.getElementById("a_update").href = "#update_data";
+                {% for element in data_list %}
+                if({{element.id}} == checked_id){
+                    document.getElementById("update_id").value = "{{element.id}}";
+                    document.getElementById("update_open_id").value = "{{element.open_id}}";
+                    document.getElementById("update_wechat_nickname").value = "{{element.wechat_nickname}}";
+                    document.getElementById("update_aggregate_amount").value = "￥" + "{{element.aggregate_amount}}";
+                    document.getElementById("update_aggregate_real_amount").value = "￥" + "{{element.aggregate_real_amount}}";
+                    document.getElementById("update_level").value = "{{element.level.id}}";
+                }
+                {% endfor %}
+    		}
+		}
+	</script>
+{% endblock %}
+{%block tr_content%}	
+	<td><input type="checkbox" name="{{element.id}}" id="{{element.id}}" /></td>						
+	<td>{{element.id}}</td>
+	<td>{{element.open_id}}</td>
+	<td>{{element.wechat_nickname}}</td>
+	<td>￥{{element.aggregate_amount}}</td>
+	<td>￥{{element.aggregate_real_amount}}</td>
+	<td>{{element.level.level_desc}}</td>					
+{%endblock%}
+{%block script%}
+	<script>
+	    $(document).ready(function(){
+		    $('#delete_data').click(function(){
+		    	
+		    	var el = document.getElementsByTagName('input'); 
+				var len = el.length; 
+				for(var i=0; i<len; i++) { 
+					if((el[i].type=="checkbox") && el[i].checked == true) { 
+						
+						$.ajax({  
+				            type:'POST',              
+				            contentType: "application/x-www-form-urlencoded;charset=utf-8",  
+				            url:"/membermanage/",  
+				            data:{
+				            	"delete":el[i].name,
+				            },  
+				            //成功后  
+				            success:function(){   
+				            },  
+
+				            complete:function(){  
+                                window.location.href = "/membermanage/"
+                                //location.reload(true);//刷新  会重复提交POST数据
+				            }   
+				        });
+					} 
+				}
+
+		    }); 
+		    $('#deletemenu').unblind('click')
+	    });
+	</script>					
+{%endblock%}						
+					
+				

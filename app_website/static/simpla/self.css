@@ -1,0 +1,17 @@
+.span-logo {
+    font-size: 24px;
+}
+
+.margin-top-50 {
+    margin-top: 50px !important;
+}
+
+.p-label {
+    padding-top: 5px !important;
+}
+
+.btn-login {
+    margin-top: 10px !important;;
+    width: 300px !important;;
+    height: 45px;
+}

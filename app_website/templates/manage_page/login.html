@@ -1,0 +1,92 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    
+    <title>李清装饰后台|登录</title>
+    
+    <!--                       CSS                       -->
+    
+    <!-- Reset Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/reset.css" type="text/css" media="screen" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/style.css" type="text/css" media="screen" />
+    
+    <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/invalid.css" type="text/css" media="screen" />	
+    
+    <!-- Self Stylesheet -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}simpla/self.css" type="text/css" media="screen" />
+    
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/jquery-1.3.2.min.js"></script>
+    
+    <!-- jQuery Configuration -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/simpla.jquery.configuration.js"></script>
+    
+    <!-- Facebox jQuery Plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/facebox.js"></script>
+    
+    <!-- jQuery WYSIWYG Plugin -->
+    <script type="text/javascript" src="{{ STATIC_URL }}simpla/jquery.wysiwyg.js"></script>
+    
+  </head>
+  
+  <body id="login">
+    <form name="LoginForm" id="LoginForm" method="POST" action="javascript:void(0)">
+      <div id="login-wrapper" class="png_bg">
+	<div id="login-top">
+	  <!-- Logo (221px width) -->
+          <span class="span-logo">李清装饰 - 后台管理</span>
+	</div> <!-- End #logn-top -->
+	
+	<div id="login-content" class="margin-top-50">
+	  <div>
+	    <p><label class="p-label">用户名：</label></p>
+	    <input id = "username" class="text-input" type="username" placeholder="请输入用户名"/>
+	    
+	    <div class="clear"></div>
+	    
+	    <p><label class="p-label">密<spance class="kongge"><spance>码：</label></p>
+	    <input id="password" class="text-input" type="password" placeholder="请输入密码" />
+	    
+	    <div class="clear"></div>
+	    <div class="clear"></div>
+	    
+	    <input id="login_click" class="button btn-login" href="/gerryhost/" type="submit" value="登录" />
+	  </div>
+	</div> <!-- End #login-content -->
+	
+      </div> <!-- End #login-wrapper -->
+    </form>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('#LoginForm').submit(function(event) {
+      event.preventDefault();
+      var user = $("#username").val()
+      var pass = $("#password").attr("value")
+      $.ajax({
+      type:"POST",
+      url:"/login/",
+      data:{
+      'username':user,
+      'password':pass,
+      },
+      success: function(response){
+      if(response == "true"){
+      document.location.assign($('#login_click').attr('href'));
+      }
+      else if(response == "false"){
+      alert("用户名或密码错误");
+      }
+      }
+      });
+      return false;
+      });
+      //$('#login_click').unbind('click')
+      });
+    </script>
+  </body>
+</html>

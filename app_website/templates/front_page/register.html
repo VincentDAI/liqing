@@ -1,0 +1,84 @@
+{% extends "front_page/base.html" %}
+{% load i18n %}
+
+{% block title %}
+<title>{% trans 'Corp_b' %} | {% trans 'Register' %}</title>
+{% endblock %}
+
+{% block main_content %}
+<!-- Start: MAIN CONTENT -->
+<div class="content">
+  <div class="container">
+    <div class="page-header">
+      <h1>{% trans 'Register Account' %}</h1>
+    </div>
+    <div class="row">
+      <div class="span6 offset3">
+        <h4 class="widget-header"><i class="icon-gift"></i> {% trans 'Be a part of Corp_b' %}</h4>
+        <div class="widget-body">
+          <div class="center-align">
+            <form id="form-register" class="form-horizontal form-signin-signup" method="post" action="/register/">
+	      <div class="control-group">
+                <input type="text" id="username" name="username" placeholder="{% trans 'Username' %}">
+              </div>
+	      <div class="control-group">
+                <input type="password" id="password1" name="password1" placeholder="{% trans 'Password' %}">
+              </div>
+	      <div class="control-group">
+                <input type="password" id="password2" name="password2" placeholder="{% trans 'Password Confirmation' %}">
+              </div>
+              <div>
+                <input type="submit" value="{% trans 'Register' %}" class="btn btn-primary btn-large">
+              </div>
+            </form>
+            <h4><i class="icon-question-sign"></i> {% trans 'Already have an account?' %}</h4>
+            <a href="/login/" class="btn btn-large bottom-space">{% trans 'Login' %}</a>
+            <h4><i class="icon-thumbs-up"></i> {% trans 'Login with third party account' %}</h4>
+            <ul class="signin-with-list">
+              <li>
+                <a class="btn-twitter">
+                  <i class="icon-twitter icon-large"></i>
+                  {% trans 'Login with Twitter' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-facebook">
+                  <i class="icon-facebook icon-large"></i>
+                  {% trans 'Login with Facebook' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-google">
+                  <i class="icon-google-plus icon-large"></i>
+                  {% trans 'Login with Google' %}
+                </a>
+              </li>
+              <li>
+                <a class="btn-github">
+                  <i class="icon-github icon-large"></i>
+                  {% trans 'Login with Github' %}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End: MAIN CONTENT -->
+{% endblock %}
+
+{% block js_import %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/front_page/register.js"></script>
+{% endblock %}
+
+{% block js_code %}
+<script type="text/javascript">
+  $(function(){
+    $("#nav-register").addClass("active-link");
+
+    Register.init();
+  });
+</script>
+{% endblock %}

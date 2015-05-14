@@ -1,0 +1,24 @@
+{% extends "manage_page/base.html" %}
+
+{% block pagehead %}
+<h2>管理主页</h2>
+<p id="page-intro"></p>
+{% endblock %}
+
+{% block shortcuts %}
+<ul class="shortcut-buttons-set">				
+  <li><a class="shortcut-button" href="#"><span>
+	<img src="{{ STATIC_URL }}simpla/images/icons/pencil_48.png" alt="icon" /><br />
+	今日订单
+  </span></a></li>				
+  <li><a class="shortcut-button" href="#"><span>
+	<img src="{{ STATIC_URL }}simpla/images/icons/paper_content_pencil_48.png" alt="icon" /><br />
+	查询全部订单
+  </span></a></li>				
+  <li><a class="shortcut-button" href="#"><span>
+	<img src="{{ STATIC_URL }}simpla/images/icons/image_add_48.png" alt="icon" /><br />
+	按条件查询
+  </span></a></li>
+</ul><!-- End .shortcut-buttons-set -->
+<div class="clear"></div>
+{% endblock %}

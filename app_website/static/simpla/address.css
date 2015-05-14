@@ -1,0 +1,97 @@
+
+
+h5{
+	color:white;
+    text-align:center;
+    font-size:100%;
+    font-family:STFangsong;
+    font-weight:bold;
+    display:inline;
+    
+}
+
+
+a:link,a:visited,a:hover,a:active,input,h2{
+    color:#6e6e6e;
+    font-family:STFangsong;
+    font-size:100%;
+    font-weight:normal;
+    display:inline;
+    position:relative;
+    text-decoration:none;
+}
+
+
+body {
+    width:100%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    background:#fff3dc;
+    
+}
+
+#right{
+    margin-right:10px;
+    display: inline;
+    float: right;
+}
+
+#left{
+    margin-left:0px;
+    display: inline;
+    float: left;
+}
+
+#smalllobster{
+    width:40px;
+    height:40px;
+    margin-top: 0px;
+    display:inline;
+    margin-right:0px;
+    float:left;
+    max-width: 100%;
+    padding-top:5px;
+}
+
+#title{
+	background-color: #be1b1b;
+    width:100%;
+    height:50px;
+    margin-top:-5px;
+}
+
+#tittletext{
+	width:50%;
+    height:60%;
+    display:inline;
+    z-index:1;
+    float:right;
+    margin-right:20%;
+    margin-top:16px;
+    text-align:left;
+   
+}
+
+#brand{
+    width:15%;
+    height:100%;
+    display:inline; 
+    float:left; 
+    margin-left:5px;   
+}
+
+#demo{
+    width:98%;
+    height:30px;
+    background:white;
+    border:#909090 1px solid;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    clear:both;
+    text-align:left;
+    padding-top:8px;
+    padding-left:4px;
+}
