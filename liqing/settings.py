@@ -62,27 +62,29 @@ WSGI_APPLICATION = 'liqing.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-if 'SERVER_SOFTWARE' in os.environ:
-   from sae.const import (
-       MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-   )
+ 
+if 'HOSTNAME' in os.environ:
+   MYSQL_HOST = ''
+   MYSQL_PORT = '3306'
+   MYSQL_USER = 'gerryhos'
+   MYSQL_PASS = 'Vincent.281121'
+   MYSQL_DB = 'gerryhos_liqing'
 else:
-    # Make `python manage.py syncdb` works happy!
-    MYSQL_HOST = 'localhost'
-    MYSQL_PORT = '3306'
-    MYSQL_USER = 'root'
-    MYSQL_PASS = ''
-    MYSQL_DB = 'app_liqing'
+   # Make `python manage.py syncdb` works happy!
+   MYSQL_HOST = 'localhost'
+   MYSQL_PORT = '3306'
+   MYSQL_USER = 'root'
+   MYSQL_PASS = ''
+   MYSQL_DB = 'app_liqing'
  
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-	'NAME':MYSQL_DB,
+        'NAME':MYSQL_DB,
         'USER': MYSQL_USER,
         'PASSWORD': MYSQL_PASS,
         'HOST': MYSQL_HOST,
-	'PORT': MYSQL_PORT,
+        'PORT': MYSQL_PORT,
     }
 }
 
@@ -110,6 +112,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+if 'HOSTNAME' in os.environ:
+   STATIC_URL = '/liqing/static/'
+else:
+   STATIC_URL = '/static/'
 
 AUTH_PROFILE_MODULE = 'liqing.UserProfile'
