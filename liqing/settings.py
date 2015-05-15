@@ -25,7 +25,7 @@ LANGUAGES = (
 SECRET_KEY = 'ixb%a=h56vep!_ev!43j4x!3w6#$qrbi2^x$t%^hw=bw$#t%3-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -63,19 +63,18 @@ WSGI_APPLICATION = 'liqing.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
  
-if 'HOSTNAME' in os.environ:
-   MYSQL_HOST = ''
-   MYSQL_PORT = '3306'
-   MYSQL_USER = 'gerryhos'
-   MYSQL_PASS = 'Vincent.281121'
-   MYSQL_DB = 'gerryhos_liqing'
-else:
-   # Make `python manage.py syncdb` works happy!
+if DEBUG:
    MYSQL_HOST = 'localhost'
    MYSQL_PORT = '3306'
    MYSQL_USER = 'root'
    MYSQL_PASS = ''
    MYSQL_DB = 'app_liqing'
+else:
+   MYSQL_HOST = ''
+   MYSQL_PORT = '3306'
+   MYSQL_USER = 'gerryhos'
+   MYSQL_PASS = 'Vincent.281121'
+   MYSQL_DB = 'gerryhos_liqing'
  
 DATABASES = {
     'default': {
@@ -112,9 +111,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-if 'HOSTNAME' in os.environ:
-   STATIC_URL = '/liqing/static/'
-else:
+if DEBUG:
    STATIC_URL = '/static/'
+else:
+   STATIC_URL = '/liqing/static/'
 
 AUTH_PROFILE_MODULE = 'liqing.UserProfile'
