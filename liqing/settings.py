@@ -25,7 +25,7 @@ LANGUAGES = (
 SECRET_KEY = 'ixb%a=h56vep!_ev!43j4x!3w6#$qrbi2^x$t%^hw=bw$#t%3-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -63,7 +63,7 @@ WSGI_APPLICATION = 'liqing.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
  
-if DEBUG:
+if "HOSTNAME" in os.environ:
    MYSQL_HOST = 'localhost'
    MYSQL_PORT = '3306'
    MYSQL_USER = 'root'
@@ -111,7 +111,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-if DEBUG:
+if "HOSTNAME" in os.environ:
    STATIC_URL = '/static/'
 else:
    STATIC_URL = '/liqing/static/'
